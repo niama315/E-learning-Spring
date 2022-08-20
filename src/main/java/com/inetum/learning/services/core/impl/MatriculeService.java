@@ -30,7 +30,7 @@ public class MatriculeService {
         Cours curso = coursRepository.findById(id_curso).get();
         User user = userRepository.findByUsername(username);
 
-        if (null != matriculeRepository.findByCursoAndUsuario(curso, user)) {
+        if (null != matriculeRepository.findByCoursAndUser(curso, user)) {
             throw new Exception("Ya se encuentra matriculado en este curso");
         }
         LocalDate date = LocalDate.now();

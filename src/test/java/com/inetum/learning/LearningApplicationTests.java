@@ -1,6 +1,6 @@
-package com.engine.fakau.TestUnitaire;
+package com.inetum.learning;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

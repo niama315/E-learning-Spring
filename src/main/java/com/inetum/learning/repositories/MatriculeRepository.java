@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MatriculeRepository extends JpaRepository<Matricule, Long> {
 
-    List<Matricule> findAllByCurso(Cours curso);
-    List<Matricule> findAllByUsuario(User user);
-    Matricule findByCursoAndUsuario(Cours curso, User user);
+    List<Matricule> findAllByCours(Cours curso);
+    List<Matricule> findAllByUser(User user);
+    Matricule findByCoursAndUser(Cours curso, User user);
 }

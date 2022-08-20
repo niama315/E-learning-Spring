@@ -21,7 +21,6 @@ public class APIController {
 
     @Autowired
     public APIController(ProfesseurService profesorService, CoursService cursoService) {
-        super();
         this.profesorService = profesorService;
         this.cursoService = cursoService;
     }

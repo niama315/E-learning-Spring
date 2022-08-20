@@ -136,7 +136,7 @@ public class CoursController {
         try {
             Cours curso = cursoRepository.findById(id_curso).get();
             User user = userRepository.findByUsername(username);
-            if (null != matriculaRepository.findByCursoAndUsuario(curso, user)) {
+            if (null != matriculaRepository.findByCoursAndUser(curso, user)) {
                 matriculado = true;
             }
             model.addAttribute("curso", curso);

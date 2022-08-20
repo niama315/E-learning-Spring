@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CoursRepository extends JpaRepository<Cours, Long> {
 
-    Cours findByNomCurso(String nombre);
-    List<Cours> findAllByProfesor(Professeur profesor);
+    Cours findByNomCours(String nombre);
+    List<Cours> findAllByProfesseur(Professeur profesor);
 }
