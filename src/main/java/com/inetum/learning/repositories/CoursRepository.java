@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface CursoRepository extends JpaRepository<Cours, Long> {
+public interface CoursRepository extends JpaRepository<Cours, Long> {
 
     Cours findByNomCurso(String nombre);
     List<Cours> findAllByProfesor(Professeur profesor);

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface MatriculaRepository extends JpaRepository<Matricule, Long> {
+public interface MatriculeRepository extends JpaRepository<Matricule, Long> {
 
     List<Matricule> findAllByCurso(Cours curso);
     List<Matricule> findAllByUsuario(User user);
