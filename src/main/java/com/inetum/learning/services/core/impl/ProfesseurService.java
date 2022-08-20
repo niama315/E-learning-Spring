@@ -4,9 +4,11 @@ import com.inetum.learning.dto.ProfesseurDto;
 import com.inetum.learning.model.Professeur;
 import com.inetum.learning.repositories.ProfesseurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProfesseurService {
 
     private ProfesseurRepository professeurRepository;
