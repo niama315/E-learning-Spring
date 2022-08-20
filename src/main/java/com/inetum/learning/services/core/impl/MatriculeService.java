@@ -7,9 +7,11 @@ import com.inetum.learning.model.Matricule;
 import com.inetum.learning.repositories.CoursRepository;
 import com.inetum.learning.repositories.MatriculeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+@Service
 public class MatriculeService {
 
 
