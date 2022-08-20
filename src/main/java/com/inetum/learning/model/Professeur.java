@@ -31,7 +31,7 @@ public class Professeur {
     private String descProfesseur;
 
     @Column(name = "detail")
-    private String detailProfesor;
+    private String detailProfesseur;
 
     private String imgurl;
 
@@ -43,7 +43,7 @@ public class Professeur {
         this.imgurl = imgurl;
     }
     public Professeur(String detailProfeseur) {
-        this.detailProfesor = detailProfeseur;
+        this.detailProfesseur = detailProfeseur;
     }
 }
 
