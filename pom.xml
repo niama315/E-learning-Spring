@@ -8,11 +8,11 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.engine.fakau</groupId>
-	<artifactId>TestUnitaire</artifactId>
+	<groupId>com.inetum</groupId>
+	<artifactId>E-Learning</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TestUnitaire</name>
-	<description>Demo project for Spring Boot</description>
+	<name>E-Learning</name>
+	<description>PFE</description>
 
 	<properties>
 		<java.version>1.8</java.version>
