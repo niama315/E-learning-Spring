@@ -17,7 +17,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class ApplicationSecurityConfiguration {
+public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private ELearningUserDetailsService userDetailsService;
