@@ -133,7 +133,7 @@ public class ProfesseurController {
         try {
             Professeur professeur = professeurRepository.findById(id_professeur).get();
             model.addAttribute("professeur", professeur);
-            List<Cours> cours = coursRepository.findAllByProfesor(professeur);
+            List<Cours> cours = coursRepository.findAllByProfesseur(professeur);
             model.addAttribute("cours", cours);
             return "professeurs/professeur-detail";
         } catch (Exception e) {

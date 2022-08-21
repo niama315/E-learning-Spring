@@ -31,7 +31,7 @@ public class SecurityController {
         try {
             String currentUsername = authentication.getName();
             User user = userRepository.findByUsername(currentUsername);
-            List<Matricule> matricules = matriculeRepository.findAllByUsuario(user);
+            List<Matricule> matricules = matriculeRepository.findAllByUser(user);
             int numCours = matricules.size();
             model.addAttribute("user", user);
             model.addAttribute("matricules", matricules);

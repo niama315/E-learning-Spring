@@ -48,7 +48,7 @@ public class ProfesseurService {
     public void patch(Professeur profesor) {
         Professeur current = professeurRepository.findById(profesor.getId_professeur()).get();
 
-        current.setDetailProfesor(profesor.getDetailProfesor());
+        current.setDetailProfesseur(profesor.getDetailProfesseur());
 
         professeurRepository.save(current);
     }
