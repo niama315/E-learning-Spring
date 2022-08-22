@@ -20,7 +20,7 @@ public class CoursService {
 
     public void create(CoursDto cursoDto) throws Exception{
         if (null != CoursRepository.findByNomCours(cursoDto.getNomCours())) {
-            throw new Exception("Ya existe un curso con el nombre " + cursoDto.getNomCours());
+            throw new Exception("Un cours avec le nom existe déjà " + cursoDto.getNomCours());
         }
         String nomCurso = cursoDto.getNomCours();
         String descCurso = cursoDto.getDescriptionCours();

@@ -31,7 +31,7 @@ public class MatriculeService {
         User user = userRepository.findByUsername(username);
 
         if (null != matriculeRepository.findByCoursAndUser(curso, user)) {
-            throw new Exception("Ya se encuentra matriculado en este curso");
+            throw new Exception("Vous êtes déjà inscrit à ce cours");
         }
         LocalDate date = LocalDate.now();
         Matricule matricula = new Matricule(date, user, curso);

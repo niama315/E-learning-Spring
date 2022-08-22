@@ -22,9 +22,9 @@ public class UserService {
     public void createUser(UserDto userDto) throws IllegalStateException {
 
         if (null != userRepository.findByUsername(userDto.getUsername())) {
-            throw new IllegalStateException("Ya existe un usuario con el nombre " + userDto.getUsername());
+            throw new IllegalStateException("Il existe déjà un utilisateur avec le nom " + userDto.getUsername());
         } else if (null != userRepository.findByEmail(userDto.getEmail())) {
-            throw new IllegalStateException("Ya existe un usuario con el email " + userDto.getEmail());
+            throw new IllegalStateException("Il y a déjà un utilisateur avec l'email " + userDto.getEmail());
         }
         String username = userDto.getUsername();
         String password = new BCryptPasswordEncoder(11).encode(userDto.getPassword());
