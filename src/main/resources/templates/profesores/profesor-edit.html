@@ -13,38 +13,38 @@
             <div class="section col s12 l6 offset-l3">
                 <form action="#" method="post"
                       th:object="${profesor}"
-                      th:action="@{/profesores/update/{id_profesor} (id_profesor=${profesor.id_profesor})}"
+                      th:action="@{/profesores/update/{id_profesor} (id_profesor=${profesor.id_professeur})}"
                 >
 
                     <div class="input-field">
-                        <label for="nom_profesor">Nombre</label>
+                        <label for="nom_profesor">Prénom</label>
                         <input type="text" class="class-controller"
                                id="nom_profesor"
-                               th:field="*{nomProfesor}" autofocus required
+                               th:field="*{prenomProfesseur}" autofocus required
                         >
                     </div>
 
                     <div class="input-field">
-                        <label for="ape_profesor">Apellido</label>
+                        <label for="ape_profesor">Nom</label>
                         <input type="text" class="class-controller"
                                id="ape_profesor"
-                               th:field="*{apeProfesor}" required
+                               th:field="*{nomProfesseur}" required
                         >
                     </div>
 
                     <div class="input-field">
-                        <label for="correo_profesor">Correo Electrónico</label>
+                        <label for="correo_profesor">Email</label>
                         <input type="text" class="class-controller"
                                id="correo_profesor"
-                               th:field="*{correoProfesor}" required
+                               th:field="*{emailProfesseur}" required
                         >
                     </div>
 
                     <div class="input-field">
-                        <label for="descripcion_profesor">Descripción</label>
+                        <label for="descripcion_profesor">Description</label>
                         <input type="text" class="class-controller"
                                id="descripcion_profesor"
-                               th:field="*{descProfesor}" required
+                               th:field="*{descProfesseur}" required
                         >
                     </div>
 
@@ -56,7 +56,7 @@
                     <button type="submit" class="btn">
                         Editar Profesor
                     </button>
-                    <a th:href="|/profesores/${profesor.id_profesor}|" class="btn red lighten-1">Atras</a>
+                    <a th:href="|/profesores/${profesor.id_professeur}|" class="btn red lighten-1">Atras</a>
                 </form>
             </div>
         </div>

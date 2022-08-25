@@ -15,8 +15,8 @@
                 <ul class="collapsible z-depth-3">
                     <li class="active">
                         <div class="collapsible-header"><i class="material-icons">livre
-                        </i><span th:text="${curso.nomCurso}">Nom du cours</span></div>
-                        <div class="collapsible-body"><span th:text="${curso.descripcionCurso}">Description du cours</span></div>
+                        </i><span th:text="${curso.nomCours}">Nom du cours</span></div>
+                        <div class="collapsible-body"><span th:text="${curso.descriptionCours}">Description du cours</span></div>
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="material-icons">local_atm</i>Prix</div>
@@ -27,20 +27,20 @@
                         </i>Difficulté
                         </div>
                         <div
-                                class="collapsible-body"><span th:text="${curso.dificultadCurso}">Difficulté
+                                class="collapsible-body"><span th:text="${curso.dificulteCours}">Difficulté
                             du cours</span></div>
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="material-icons">assignment_ind</i>Professeur</div>
                         <div class="collapsible-body">
-                            <a th:href="@{/profesores/{id_profesor}(id_profesor=${curso.profesor.id_profesor})}">
+                            <a th:href="@{/profesores/{id_profesor}(id_profesor=${curso.professeur.id_professeur})}">
                                 <div class="row">
-                                <img th:src="${curso.profesor.imgurl}"
+                                <img th:src="${curso.professeur.imgurl}"
                                      class="col s4 m12 circle responsive-img"
                                      alt="instructor image"/>
                                 <div class="col s8 m12 teal-text mt-3 center-align">
                                 <strong
-                                    th:text="${curso.profesor.nomProfesor} + ' ' + ${curso.profesor.apeProfesor}">Données de l'enseignant</strong>
+                                    th:text="${curso.professeur.prenomProfesseur} + ' ' + ${curso.professeur.nomProfesseur}">Données de l'enseignant</strong>
                                 </div>
                                 </div>
                             </a>
@@ -53,32 +53,32 @@
                 <div class="card z-depth-3">
                     <div class="card-image">
                         <img th:src="${curso.imgurl}" alt="course image">
-                        <span id="detail-card-title" class="card-title"><strong th:text="${curso.nomCurso}">Le nom du
+                        <span id="detail-card-title" class="card-title"><strong th:text="${curso.nomCours}">Le nom du
                              Cours</strong>
                             <span sec:authorize="hasRole('ROLE_ADMIN')">
                                         <a th:href="@{/cursos/edit/{id_curso}
-                                        (id_curso=${curso.id_curso})}"
+                                        (id_curso=${curso.id_cours})}"
                                            class="btn-floating waves-effect waves-light btn-small yellow darken-1"><i
                                                 class="material-icons">edit</i>
                                         </a>
                             </span>
                             <span sec:authorize="hasRole('ROLE_ADMIN')">
                                         <a th:href="@{/cursos/delete/{id_curso}
-                                        (id_curso=${curso.id_curso})}"
+                                        (id_curso=${curso.id_cours})}"
                                            class="btn-floating waves-effect waves-light btn-small red lighten-1"><i
                                                 class="material-icons">delete_forever</i>
                                         </a>
                             </span>
                         </span>
                     </div>
-                    <div class="card-content" th:text="${curso.detalleCurso}">
+                    <div class="card-content" th:text="${curso.detailCours}">
                         <p>Détail du cours</p>
                     </div>
                     <div class="card-action">
                         <!-- Modal Trigger -->
                         <a th:if="${matriculado == false}" href="#modal-matricula"
                            class="teal-text darken-1 modal-trigger"><strong>Inscrire</strong></a>
-                        <a target="_blank" th:unless="${matriculado == false}" th:href="${curso.urlCurso}"
+                        <a target="_blank" th:unless="${matriculado == false}" th:href="${curso.urlCours}"
                            class="teal-text darken-1"><strong>Acceder</strong></a>
                     </div>
                 </div>
@@ -89,15 +89,15 @@
                     <h4 class="teal-text">Matrícula</h4>
                     <p>Vous êtes à un pas du début d'un nouveau voyage vers l'excellence. Vous souhaitez vous inscrire au
                         cours de<strong
-                            th:text="${curso.nomCurso}">nom
+                            th:text="${curso.nomCours}">nom
                             cours</strong>,
                         dicté par <strong
-                                th:text="${curso.profesor.nomProfesor} + ' ' + ${curso.profesor.apeProfesor}">professeur
+                                th:text="${curso.professeur.prenomProfesseur} + ' ' + ${curso.professeur.nomProfesseur}">professeur
                         </strong>?</p>
                 </div>
                 <div class="modal-footer">
                     <a href="#!" class="modal-close waves-effect waves-red btn-flat red-text">Annuler</a>
-                    <a th:href="|/matricula/save/${curso.id_curso}|"
+                    <a th:href="|/matricula/save/${curso.id_cours}|"
                        class="modal-close waves-effect waves-green btn-flat teal-text">
                         Confirmer</a>
                 </div>

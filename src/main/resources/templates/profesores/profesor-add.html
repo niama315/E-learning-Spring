@@ -7,7 +7,7 @@
 
 <main>
     <div class="container">
-        <h3 class="center">Nuevo Profesor</h3>
+        <h3 class="center">Nouveau Professeur</h3>
         <br>
         <div class="row">
             <div class="section col s12 l6 offset-l3">
@@ -17,34 +17,34 @@
                 >
 
                     <div class="input-field">
-                        <label for="nom_profesor">Nombre</label>
+                        <label for="nom_profesor">prénom</label>
                         <input type="text" class="class-controller"
                                id="nom_profesor"
-                               th:field="*{nombre}" autofocus required
+                               th:field="*{prenomProfesseur}" autofocus required
                         >
                     </div>
 
                     <div class="input-field">
-                        <label for="ape_profesor">Apellido</label>
+                        <label for="ape_profesor">Nom</label>
                         <input type="text" class="class-controller"
                                id="ape_profesor"
-                               th:field="*{apellido}" required
+                               th:field="*{nomProfesseur}" required
                         >
                     </div>
 
                     <div class="input-field">
-                        <label for="correo_profesor">Correo Electrónico</label>
+                        <label for="correo_profesor">Email</label>
                         <input type="text" class="class-controller"
                                id="correo_profesor"
-                               th:field="*{correo}" required
+                               th:field="*{emailProfesseur}" required
                         >
                     </div>
 
                     <div class="input-field">
-                        <label for="descripcion_profesor">Descripción</label>
+                        <label for="descripcion_profesor">Description</label>
                         <input type="text" class="class-controller"
                                id="descripcion_profesor"
-                               th:field="*{descripcion}" required
+                               th:field="*{descProfesseur}" required
                         >
                     </div>
 

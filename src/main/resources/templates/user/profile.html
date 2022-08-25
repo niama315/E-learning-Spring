@@ -19,7 +19,7 @@
                     <li>
                         <div class="collapsible-header"><i class="material-icons">assignment_ind
                         </i><span th:text="${user.username}"></span></div>
-                        <div class="collapsible-body" th:switch="${numCursos}">
+                        <div class="collapsible-body" th:switch="${numCours}">
                             <div th:case="'0'">
                                 Pas de cours.
                             </div>
@@ -27,7 +27,7 @@
                                 Inscrit à 1 cours.
                             </div>
                             <div th:case="*">
-                                Inscrits dans <span th:text="${numCursos}"></span> cours.</div>
+                                Inscrits dans <span th:text="${numCours}"></span> cours.</div>
                             </div>
                     </li>
                     <li>
@@ -36,7 +36,7 @@
                     </li>
                     <li>
                         <div class="collapsible-header"><i class="material-icons">event_note</i>Date d'enregistrement</div>
-                        <div class="collapsible-body">étudiant depuis <span th:text="${user.fecha}">Date</span></div>
+                        <div class="collapsible-body">étudiant depuis <span th:text="${user.date}">Date</span></div>
                     </li>
                 </ul>
             </div>
@@ -45,18 +45,18 @@
                 <div class="card z-depth-3">
                     <div class="card-content teal lighten-2 white-text">
                         <span class="card-title"><strong
-                                th:text="${user.nombre} + ' ' + ${user.apellido}"></strong>
+                                th:text="${user.prenom} + ' ' + ${user.nom}"></strong>
                             <a sec:authorize="isAuthenticated()" th:href="@{/user/edit/{id_user} (id_user=${user.id})}"
                             class="btn-floating btn-small yellow waves-effect waves-light">
                                 <i class="material-icons">edit</i>
                             </a>
                         </span>
-                        <p th:if="${user.detalle}">
-                            <span th:text="${user.detalle}"></span>
+                        <p th:if="${user.detail}">
+                            <span th:text="${user.detail}"></span>
                             <a class="btn-floating btn-small red lighten-1 waves-effect waves-light modal-trigger" href="#modal-detalle"><i class="material-icons">edit</i></a>
                         </p>
                         <!-- Modal Trigger -->
-                        <p th:unless="${user.detalle}">
+                        <p th:unless="${user.detail}">
                             <a class="btn-floating red lighten-1 btn-small modal-trigger" href="#modal-detalle"><i class="material-icons">add</i></a>
                         </p>
                         <!-- Modal Sctructure -->
@@ -67,7 +67,7 @@
                                     <h4 class="teal-text">Parlez nous de vous</h4>
                                     <div class="input-field">
                                         <label for="detalle-user">Détail</label>
-                                        <textarea th:field="*{detalle}" id="detalle-user" class="materialize-textarea"></textarea>
+                                        <textarea th:field="*{detail}" id="detalle-user" class="materialize-textarea"></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
@@ -81,16 +81,16 @@
                     <div class="card-action">
                         <!-- Cursos -->
                         <h5 class="teal-text mb-4">Cours inscrits</h5>
-                        <div th:switch="${numCursos}">
+                        <div th:switch="${numCours}">
                             <div th:case="'0'" class="mb-3">
                                 Vous n'êtes encore inscrit à aucun cours.
                             </div>
                             <div th:case="*">
-                                <div class="mb-3" th:each="matricula:${matriculas}">
-                                    <a th:href="|/cursos/${matricula.curso.id_curso}|"><strong
-                                            th:text="${matricula.curso.nomCurso}">Cours
+                                <div class="mb-3" th:each="matricula:${matricules}">
+                                    <a th:href="|/cursos/${matricula.cours.id_cours}|"><strong
+                                            th:text="${matricula.cours.nomCours}">Cours
                                     </strong> Dicté par <strong
-                                            th:text="${matricula.curso.profesor.nomProfesor} + ' ' + ${matricula.curso.profesor.apeProfesor}"></strong> depuis <strong th:text="${matricula.fecha_matricula}"></strong></a>
+                                            th:text="${matricula.cours.professeur.nomProfesseur} + ' ' + ${matricula.cours.professeur.prenomProfesseur}"></strong> depuis <strong th:text="${matricula.date_matricule}"></strong></a>
                                 </div>
                             </div>
                         </div>

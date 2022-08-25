@@ -12,14 +12,14 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center white-text">Bienvenue <span th:text="${user.nombre}"></span></h1>
+                <h1 class="header center white-text">Bienvenue <span th:text="${user.nom}"></span></h1>
                 <div class="row center">
                     <h5 class="header col s12 light">Vous avez réussi à vous inscrire à<span
-                            th:text="${curso.nomCurso}"></span>.</h5>
+                            th:text="${curso.nomCours}"></span>.</h5>
                 </div>
                 <br>
                 <div class="row center">
-                    <a th:href="|${curso.urlCurso}|" target="_blank" class="waves-effect waves-light btn-large">Accéder</a>
+                    <a th:href="|${curso.urlCours}|" target="_blank" class="waves-effect waves-light btn-large">Accéder</a>
                 </div>
                 <br><br>
             </div>

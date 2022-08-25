@@ -27,18 +27,18 @@
             <div class="col s12 cards-container">
                 <div class="card hoverable" th:each="curso:${cursos}">
                     <div class="card-image">
-                        <a th:href="|/cursos/${curso.id_curso}|">
+                        <a th:href="|/cursos/${curso.id_cours}|">
                             <img th:src="${curso.imgurl}">
                         </a>
-                        <a th:href="|/cursos/${curso.id_curso}|"
+                        <a th:href="|/cursos/${curso.id_cours}|"
                            class="btn-floating btn-large halfway-fab waves-effect waves-light red">
-                            <img th:src="${curso.profesor.imgurl}" alt="img instructor" class="responsive-img circle">
+                            <img th:src="${curso.professeur.imgurl}" alt="img instructor" class="responsive-img circle">
                         </a>
                     </div>
                     <div class="card-content">
-                        <span id="curso-card-title" class="card-title teal-text" th:text="${curso.nomCurso}">Qualification
+                        <span id="curso-card-title" class="card-title teal-text" th:text="${curso.nomCours}">Qualification
                         </span>
-                        <p th:text="${curso.descripcionCurso}">La description</p>
+                        <p th:text="${curso.descriptionCours}">La description</p>
                     </div>
                 </div>
             </div>
