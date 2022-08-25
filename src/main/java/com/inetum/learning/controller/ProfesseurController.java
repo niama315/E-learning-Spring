@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping("/professeurs")
+@RequestMapping("/profesores")
 public class ProfesseurController {
     private ProfesseurService professeurService;
     private ProfesseurRepository professeurRepository;
@@ -36,26 +36,26 @@ public class ProfesseurController {
     @GetMapping("/add")
     @PreAuthorize("hasRole('ROLE_USER')")
     public String addProfesseur(Model model) {
-        model.addAttribute("professeur", new ProfesseurDto());
-        return "professeurs/professeur-add";
+        model.addAttribute("profesor", new ProfesseurDto());
+        return "profesores/profesor-add";
     }
 
     @PostMapping("/save")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String saveProfesseur(ProfesseurDto professeur) {
-        professeurService.create(professeur);
+    public String saveProfesseur(ProfesseurDto profesor) {
+        professeurService.create(profesor);
 
-        return "redirect:/professeurs";
+        return "redirect:/profesores";
     }
 
     @GetMapping("/edit/{id_profesor}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String getProfesseurForUpdate(@PathVariable Long id_professeur,
+    public String getProfesseurForUpdate(@PathVariable Long id_profesor,
                                        Model model) {
         try {
-            Professeur professeurActual = professeurRepository.findById(id_professeur).get();
-            model.addAttribute("professeur", professeurActual);
-            return "professeurs/professeur-edit";
+            Professeur profesorActual = professeurRepository.findById(id_profesor).get();
+            model.addAttribute("profesor", profesorActual);
+            return "profesores/profesor-edit";
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", e);
@@ -65,11 +65,11 @@ public class ProfesseurController {
 
     @PostMapping("/update/{id_profesor}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String updateProfesseur(@PathVariable Long id_professeur,
+    public String updateProfesseur(@PathVariable Long id_profesor,
                                  Professeur professeur, RedirectAttributes attributes, Model model){
 
         try {
-            Professeur currentProfesseur = professeurRepository.findById(id_professeur).get();
+            Professeur currentProfesseur = professeurRepository.findById(id_profesor).get();
             currentProfesseur.setPrenomProfesseur(professeur.getPrenomProfesseur());
             currentProfesseur.setNomProfesseur(professeur.getNomProfesseur());
             currentProfesseur.setEmailProfesseur(professeur.getEmailProfesseur());
@@ -77,7 +77,7 @@ public class ProfesseurController {
             currentProfesseur.setImgurl(professeur.getImgurl());
 
             professeurService.update(professeur);
-            attributes.addAttribute("id_professeur", id_professeur);
+            attributes.addAttribute("id_profesor", id_profesor);
 
             return "redirect:/profesores/{id_profesor}";
         } catch (Exception e) {
@@ -87,15 +87,15 @@ public class ProfesseurController {
         }
     }
 
-    @PostMapping("/patch/{id_professeur}")
-    public String patchProfesseur(@PathVariable Long id_professeur, Professeur professeur, RedirectAttributes attributes, Model model) {
+    @PostMapping("/patch/{id_profesor}")
+    public String patchProfesseur(@PathVariable Long id_profesor, Professeur profesor, RedirectAttributes attributes, Model model) {
 
         try {
-           Professeur current = professeurRepository.findById(id_professeur).get();
-            current.setDetailProfesseur(professeur.getDetailProfesseur());
+           Professeur current = professeurRepository.findById(id_profesor).get();
+            current.setDetailProfesseur(profesor.getDetailProfesseur());
             professeurService.patch(current);
 
-            attributes.addAttribute("id_profesor", id_professeur);
+            attributes.addAttribute("id_profesor", id_profesor);
             return "redirect:/profesores/{id_profesor}";
         } catch (Exception e) {
             e.printStackTrace();
@@ -107,19 +107,19 @@ public class ProfesseurController {
     @GetMapping
     @PreAuthorize("hasRole('ROLE_USER')")
     public String getProfesseursList(Model model) {
-        List<Professeur> professeurs = professeurService.getAll();
-        model.addAttribute("professeurs", professeurs);
-        return "professeurs/professeurs";
+        List<Professeur> profesores = professeurService.getAll();
+        model.addAttribute("profesores", profesores);
+        return "profesores/profesores";
     }
 
-    @GetMapping("/delete/{id_professeur}")
+    @GetMapping("/delete/{id_profesor}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String deleteProfesseur(@PathVariable Long id_professeur, Model model) {
+    public String deleteProfesseur(@PathVariable Long id_profesor, Model model) {
         try {
-            Professeur professeurActual = professeurRepository.findById(id_professeur).get();
-            professeurService.delete(professeurActual);
+            Professeur profesorActual = professeurRepository.findById(id_profesor).get();
+            professeurService.delete(profesorActual);
 
-            return "redirect:/professeurs";
+            return "redirect:/profesores";
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", e);
@@ -127,15 +127,15 @@ public class ProfesseurController {
         }
     }
 
-    @GetMapping("/{id_professeur}")
+    @GetMapping("/{id_profesor}")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public String getProfesseurDetail(@PathVariable Long id_professeur, Model model) {
+    public String getProfesseurDetail(@PathVariable Long id_profesor, Model model) {
         try {
-            Professeur professeur = professeurRepository.findById(id_professeur).get();
-            model.addAttribute("professeur", professeur);
-            List<Cours> cours = coursRepository.findAllByProfesseur(professeur);
-            model.addAttribute("cours", cours);
-            return "professeurs/professeur-detail";
+            Professeur profesor = professeurRepository.findById(id_profesor).get();
+            model.addAttribute("profesor", profesor);
+            List<Cours> cursos = coursRepository.findAllByProfesseur(profesor);
+            model.addAttribute("cursos", cursos);
+            return "profesores/profesor-detail";
         } catch (Exception e) {
             e.printStackTrace();
             model.addAttribute("error", e);
