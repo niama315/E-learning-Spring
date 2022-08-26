@@ -13,15 +13,15 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "matricule")
+@Table(name = "matricula")
 public class Matricule {
 
     @Id
-    @Column(name = "matricule_id")
+    @Column(name = "matricula_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_matricule;
 
-    @Column(name = "date")
+    @Column(name = "fecha")
     private LocalDate date_matricule;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
@@ -29,7 +29,7 @@ public class Matricule {
     private User user;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cours_id", nullable = false)
+    @JoinColumn(name = "curso_id", nullable = false)
     private Cours cours;
 
     public Matricule(LocalDate date_matricule, User user, Cours cours) {

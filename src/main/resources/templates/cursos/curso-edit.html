@@ -27,9 +27,9 @@
 
                     <div class="input-field">
                         <select th:field="*{dificulteCours}" id="dificultad" required>
-                            <option th:value="'Facil'" th:text="Facil"></option>
-                            <option th:value="'Intermedio'" th:text="Intermedio"></option>
-                            <option th:value="'Avanzado'" th:text="Avanzado"></option>
+                            <option th:value="'Facil'" th:text="Facile"></option>
+                            <option th:value="'Intermedio'" th:text="Intermédiaire"></option>
+                            <option th:value="'Avanzado'" th:text="Avancé"></option>
                         </select>
                         <label>Difficulté</label>
                     </div>
@@ -64,9 +64,9 @@
                     </div>
 
                     <button type="submit" class="btn">
-                        Confirmar
+                        Confirmer
                     </button>
-                    <a th:href="@{/cursos/{id_curso} (id_curso=${curso.id_cours})}" class="btn red lighten-1">Derrière</a>
+                    <a th:href="@{/cursos/{id_curso} (id_curso=${curso.id_cours})}" class="btn red lighten-1">Annuler</a>
                 </form>
             </div>
         </div>

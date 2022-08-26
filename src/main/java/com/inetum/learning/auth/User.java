@@ -21,15 +21,16 @@ public class User {
     private String username;
     @Column(name = "password")
     private String password;
-    @Column(name = "prenom")
+    @Column(name = "nombre")
     private String prenom;
-    @Column(name = "nom")
+    @Column(name = "apellido")
     private String nom;
     @Column(name = "email")
     private String email;
+    @Column(name = "detalle")
     private String detail;
     private String imgurl;
-    @Column(name = "date_sing_up")
+    @Column(name = "fecha_registro")
     private LocalDate date;
 
     public User(String username, String password, String nombre, String apellido, String email, String imgurl, LocalDate fecha) {

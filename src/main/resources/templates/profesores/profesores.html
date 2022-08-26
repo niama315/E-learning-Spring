@@ -13,14 +13,13 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center white-text">Profesores</h1>
+                <h1 class="header center white-text">Enseignants</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">Se parte de nuestro gran staff de profesores</h5>
+                    <h5 class="header col s12 light">Faites partie de notre formidable équipe d'enseignants</h5>
                 </div>
                 <br>
                 <div class="row center">
-                    <a th:href="@{/profesores/add}" class="waves-effect waves-light btn-large">Únete
-                        a Nosotros</a>
+                    <a th:href="@{/profesores/add}" class="waves-effect waves-light btn-large">REJOIGNEZ-NOUS</a>
                 </div>
                 <br><br>
             </div>
@@ -31,7 +30,7 @@
         <div th:switch="profesores" class="container">
             <div th:case="*" class="row">
                 <div class="col s12 center">
-                    <h4>Lista de Profesores</h4>
+                    <h4>Liste des enseignants</h4>
                     <br>
                     <table class="highlight responsive-table">
                         <thead>

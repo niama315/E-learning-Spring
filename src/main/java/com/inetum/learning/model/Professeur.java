@@ -10,27 +10,27 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "professeur")
+@Table(name = "profesor")
 public class Professeur {
 
     @Id
-    @Column(name = "professeur_id")
+    @Column(name = "profesor_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_professeur;
 
-    @Column(name = "prenom")
+    @Column(name = "nombre")
     private String prenomProfesseur;
 
-    @Column(name = "nom")
+    @Column(name = "apellido")
     private String nomProfesseur;
 
-    @Column(name = "email")
+    @Column(name = "correo")
     private String emailProfesseur;
 
-    @Column(name = "description")
+    @Column(name = "descripcion")
     private String descProfesseur;
 
-    @Column(name = "detail")
+    @Column(name = "detalle")
     private String detailProfesseur;
 
     private String imgurl;

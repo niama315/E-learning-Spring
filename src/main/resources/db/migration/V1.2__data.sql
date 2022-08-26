@@ -1,6 +1,6 @@
 -- INSERTAR USUARIOS
 INSERT INTO user (username, password, nombre, apellido, email, fecha_registro, imgurl) VALUES
-('edominguez', '$2a$11$dp4wMyuqYE3KSwIyQmWZFeUb7jCsHAdk7ZhFc0qGw6i5J124imQBi', 'Edwin', 'Dominguez',
+('edominguez', '$2a$12$XMQz.p74PYh8JEqkH4TBGORc06E3K3Fbr8Ix4cuu0oqnZq.bxUjBq', 'Edwin', 'Dominguez',
  'edwindominguez@hotmail.com', '2019-09-10', 'https://i.imgur.com/T0n0PH9.jpg'),
 ('demo', '$2a$11$.NNQgUXukpCuvB5nG.5XGO/NFOESgfPSqETlg5Pj2paBYmStZiucO', 'demo', 'test', 'demo@demo.com', '2019-09-10', 'https://i.imgur.com/k4k1fOM.png');
 -- INSERTAR ROLES

@@ -3,7 +3,7 @@
         <a id="logo-container" href="/" class="brand-logo white-text">E-Learning</a>
         <ul class="right hide-on-med-and-down">
             <li><a th:href="@{/cursos}" class="white-text">Cours</a></li>
-            <li><a th:href="@{/profesores}" class="white-text">Professeurs</a></li>
+            <li><a th:href="@{/profesores}" class="white-text">Enseignants</a></li>
             <!--Dropdown-->
             <li sec:authorize="isAnonymous()"><a class="dropdown-trigger" href="#" data-target="logindd">Accéder
             </a></li>
@@ -12,11 +12,11 @@
         </ul>
         <ul id="nav-mobile" class="sidenav teal darken-2">
             <li><a th:href="@{/cursos}" class="white-text">Cours</a></li>
-            <li><a th:href="@{/profesores}" class="white-text">Professeurs</a></li>
-            <li sec:authorize="isAnonymous()"><a th:href="@{/login}" class="white-text">Commençer la session</a></li>
-            <li sec:authorize="isAnonymous()"><a th:href="@{/register}" class="white-text">Enregistrement</a></li>
+            <li><a th:href="@{/profesores}" class="white-text">Enseignants</a></li>
+            <li sec:authorize="isAnonymous()"><a th:href="@{/login}" class="white-text">Se connecter</a></li>
+            <li sec:authorize="isAnonymous()"><a th:href="@{/register}" class="white-text">Créer compte</a></li>
             <li sec:authorize="isAuthenticated()"><a th:href="@{/profile}" class="white-text">Profil</a></li>
-            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" class="white-text">Sortir</a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}" class="white-text">Déconnexion</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger white-text"><i
                 class="material-icons">menu</i></a>
@@ -25,9 +25,9 @@
 <!-- Dropdown Content -->
 <ul id="accountdd" class="dropdown-content">
     <li sec:authorize="isAuthenticated()"><a th:href="@{/profile}">Profil</a></li>
-    <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Sortir</a></li>
+    <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Déconnexion</a></li>
 </ul>
 <ul id="logindd" class="dropdown-content">
-    <li><a th:href="@{/login}">Commencer la session</a></li>
-    <li><a th:href="@{/register}">Enregistrement</a></li>
+    <li><a th:href="@{/login}">Se connecter</a></li>
+    <li><a th:href="@{/register}">Créer Compte</a></li>
 </ul>

@@ -19,13 +19,12 @@
                 <ul class="collapsible z-depth-3 mt-3">
                     <li>
                         <div class="collapsible-header"><i class="material-icons">assignment_ind
-                        </i><span>Especialidad</span></div>
-                        <div class="collapsible-body"><span th:text="${profesor.descProfesseur}">Descripcion del
-                            profesor</span></div>
+                        </i><span>Spécialité</span></div>
+                        <div class="collapsible-body"><span th:text="${profesor.descProfesseur}">Description</span></div>
                     </li>
                     <li>
-                        <div class="collapsible-header"><i class="material-icons">drafts</i>Correo</div>
-                        <div class="collapsible-body"><span th:text="${profesor.emailProfesseur}">Correo del profesor</span></div>
+                        <div class="collapsible-header"><i class="material-icons">drafts</i>E-mail</div>
+                        <div class="collapsible-body"><span th:text="${profesor.emailProfesseur}">Email Enseignant</span></div>
                     </li>
                 </ul>
             </div>
@@ -44,7 +43,7 @@
                                     </span>
                         </span>
                         <p th:if="${profesor.detailProfesseur}">
-                            <span th:text="${profesor.detailProfesseur}">Detalle</span>
+                            <span th:text="${profesor.detailProfesseur}">Détail</span>
                             <a sec:authorize="hasRole('ROLE_ADMIN')" class="btn-floating btn-small red lighten-1 waves-effect waves-light modal-trigger" href="#modal-detalle"><i class="material-icons">edit</i></a>
                         </p>
                         <!-- Modal Trigger -->
@@ -57,27 +56,27 @@
                         <form th:action="@{/profesores/patch/{id_profesor} (id_profesor=${profesor.id_professeur})}" th:object="${profesor}" method="post">
 
                         <div class="modal-content">
-                            <h4 class="teal-text">Cuéntanos sobre ti</h4>
+                            <h4 class="teal-text">Parlez-nous de vous</h4>
                             <div class="input-field">
-                                <label for="detalle-profesor">Detalle</label>
+                                <label for="detalle-profesor">Détail</label>
                                 <textarea th:field="*{detailProfesseur}" id="detalle-profesor" class="materialize-textarea"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-red btn-flat red-text">Cancelar</a>
+                            <a href="#!" class="modal-close waves-effect waves-red btn-flat red-text">Annuler</a>
                             <button type="submit" class="modal-close waves-effect waves-green btn-flat teal-text">
-                                Confirmar</button>
+                                Confirmer</button>
                         </div>
                         </form>
                     </div>
                     <div class="card-action">
                         <!-- Cursos -->
-                        <h5 class="teal-text mb-4">Cursos <span sec:authorize="hasRole('ROLE_ADMIN')">
+                        <h5 class="teal-text mb-4">Cours <span sec:authorize="hasRole('ROLE_ADMIN')">
                             <a th:href="@{/cursos/add/{id_profesor} (id_profesor=${profesor.id_professeur})}" class="btn-floating btn-small waves-effect waves-light lighten-1"><i class="material-icons">add</i></a>
                         </span>
                         </h5>
                         <div class="mb-3" th:each="curso:${cursos}">
-                            <a th:href="|/cursos/${curso.id_cours}|"><strong th:text="${curso.nomCours}">Cursos</strong></a>
+                            <a th:href="|/cursos/${curso.id_cours}|"><strong th:text="${curso.nomCours}">Cours</strong></a>
                         </div>
                     </div>
                 </div>

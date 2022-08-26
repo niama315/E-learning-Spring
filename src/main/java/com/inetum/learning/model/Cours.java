@@ -37,7 +37,7 @@ public class Cours {
     private String imgurl;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "professeur_id", nullable = false)
+    @JoinColumn(name = "profesor_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Professeur professeur;
 
