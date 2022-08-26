@@ -12,23 +12,23 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "cours")
+@Table(name = "curso")
 public class Cours {
     @Id
-    @Column(name = "id_cours")
+    @Column(name = "curso_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_cours;
 
     @Column(name = "nombre", nullable = false, unique = true)
     private String nomCours;
 
-    @Column(name = "description")
+    @Column(name = "descripcion")
     private String descriptionCours;
 
-    @Column(name = "detail")
+    @Column(name = "detalle")
     private String detailCours;
 
-    @Column(name = "dificulte")
+    @Column(name = "dificultad")
     private String dificulteCours;
 
     @Column(name = "url")
