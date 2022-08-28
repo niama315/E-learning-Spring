@@ -30,7 +30,7 @@ public class Professeur {
     @Column(name = "descripcion")
     private String descProfesseur;
 
-    @Column(name = "detalle")
+    @Column(name = "detalle", length = 1024)
     private String detailProfesseur;
 
     private String imgurl;

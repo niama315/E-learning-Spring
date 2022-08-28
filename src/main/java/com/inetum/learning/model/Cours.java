@@ -25,7 +25,7 @@ public class Cours {
     @Column(name = "descripcion")
     private String descriptionCours;
 
-    @Column(name = "detalle")
+    @Column(name = "detalle", length = 1024)
     private String detailCours;
 
     @Column(name = "dificultad")
