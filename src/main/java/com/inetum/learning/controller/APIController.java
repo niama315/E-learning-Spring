@@ -27,12 +27,12 @@ public class APIController {
         this.cursoService = cursoService;
     }
 
-    @GetMapping("/profesores")
+    @GetMapping("/professeurs")
     public List<Professeur> getAllProf() {
         return this.profesorService.getAll();
     }
 
-    @GetMapping("/cursos")
+    @GetMapping("/cours")
     public List<Cours> getAllCurso() {
         return this.cursoService.getAll();
     }

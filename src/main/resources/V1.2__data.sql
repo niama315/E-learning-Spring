@@ -36,4 +36,4 @@ INSERT INTO curso (nombre, descripcion, profesor_id, detalle, dificultad, url, i
 -- INSERTAR MATRICULAS
 INSERT INTO matricula (user_id, curso_id, fecha) VALUES ( 1, 3, '2019-10-10' ),
                                                         ( 2, 1, '2019-11-01'),
-                                                        ( 2, 4, '2019-11-02' )
+                                                        ( 2, 4, '2019-11-02' );
