@@ -1,4 +1,4 @@
-package com.inetum.learning.service.core.impl;
+package com.inetum.learning.services.core.impl;
 
 import com.inetum.learning.auth.AuthGroup;
 import com.inetum.learning.auth.AuthGroupRepository;

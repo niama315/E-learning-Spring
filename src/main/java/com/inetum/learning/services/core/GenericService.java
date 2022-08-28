@@ -1,4 +1,4 @@
-package com.inetum.learning.service.core;
+package com.inetum.learning.services.core;
 
 import java.util.List;
 
