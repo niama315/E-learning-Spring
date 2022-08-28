@@ -13,5 +13,4 @@ public class ProfesseurDto {
     private String emailProfesseur;
     private String descProfesseur;
     private String imgurl;
-
 }
